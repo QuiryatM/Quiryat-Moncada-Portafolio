@@ -7,13 +7,13 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 45px;
 }
 
 body {
     color: white;
     font-family: Arial, sans-serif;
-    overflow-x: hidden;
-    padding-top: 70px;
+  
 }
 
 body::before {
@@ -44,23 +44,21 @@ body::before {
     background: rgba(0, 0, 0, 0.4) !important;
     backdrop-filter: blur(10px);
     padding: 15px 30px;
+    height: 60px;
 }
 
 .hero {
-    min-height: 100vh;
-
+    min-height: calc(100vh - 70px);
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-
     text-align: center;
-    padding: 20px;
 }
 
-.hero h1 {
-    font-size: 4rem;
-    font-weight: bold;
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .hero p {
@@ -82,19 +80,21 @@ body::before {
     font-size: 1.3rem;
     color: #cbd5e1;
     margin-top: 20px;
-    max-width: 500px;
+    max-width: 600px;
 }
 
-.hero-img {
+ 
+.about-img {
     width: 350px;
     border-radius: 50%;
     border: 4px solid cyan;
-    box-shadow: 0 0 30px rgba(0,255,255,0.4);
+    box-shadow: 0 0 30px rgba(0,255,255,0.4);  
 }
 
 .seccion {
     min-height: 100vh;
     padding: 100px 50px;
+    margin: 0;
 }
 
 .seccion h2 {
@@ -119,9 +119,9 @@ body::before {
     padding: 10px 20px;
     border-radius: 10px;
     text-decoration: none;
-
     transition: 0.3s;
     gap: 8px;
+    justify-content: center;
 }
 
 .social-btn:hover {
@@ -141,35 +141,19 @@ body::before {
     color: #cbd5e1;
 }
 
-.carousel {
-    margin-top: 50px;
-}
-
-.carousel img {
-    height: 500px;
-    object-fit: cover;
-    border-radius: 20px;
-}
 
 .skill-card {
     background: rgba(255,255,255,0.05);
     border: 1px solid rgba(255,255,255,0.1);
-
     backdrop-filter: blur(10px);
-
-    padding: 30px;
+    padding: 40px;
     border-radius: 20px;
-
-    height: 100%;
-
     transition: 0.3s;
 }
 
 .skill-card:hover {
     transform: translateY(-10px);
-
     border: 1px solid cyan;
-
     box-shadow: 0 0 20px rgba(0,255,255,0.2);
 }
 
@@ -181,19 +165,103 @@ body::before {
 .skill-card ul {
     list-style: none;
     padding: 0;
+    display: flex;
+    align-items:center ;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
 }
 
 .skill-card li {
-    margin-bottom: 10px;
-    color: #cbd5e1;
     display: flex;
     align-items: center;
-    gap: 10;
 }
 
 .icon-skill {
     width: 40px;
     height: 40px;
+}
+
+.project-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    padding: 15px;
+    border-radius: 20px;
+    transition: 0.3s;
+    margin: auto;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: cyan;
+    box-shadow: 0 0 20px rgba(0,255,255,0.2);
+}
+
+.project-img {
+    width: 100%;
+    height: 180px;
+    border-radius: 3%;
+    border: 2px solid cyan;
+    box-shadow: 0 0 30px rgba(0,255,255,0.4);  
+    
+}
+
+.project-content {
+    padding: 20px;
+}
+
+.project-links {
+    display: flex;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.tech span {
+    font-size: 0.8rem;
+    padding: 4px 10px;
+    border: 1px solid cyan;
+    border-radius: 10px;
+    color: cyan;
+}
+
+#contact {
+    padding-top: 5px;
+}
+
+#contact form {
+    max-width: 500px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 40px;
+    border-radius: 20px;
+}
+
+#contact label {
+    color: #e2e8f0;
+    font-weight: bold;
+}
+
+#contact input,
+#contact textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    background: rgba(255,255,255,0.05);
+    color: white;
+    font-size: 1rem;
 }
 
 
@@ -215,7 +283,11 @@ body::before {
         font-size: 2rem;
     }
 
-    .hero-img {
+    .about-img {
         width: 250px;
+    }
+
+    .skill-card {
+        margin-bottom: 20px;
     }
 }
